@@ -5,21 +5,21 @@
 class Realm < Formula
   desc "Inheritable and overridable configuration management"
   homepage "https://github.com/steviebps/realm"
-  version "0.0.24"
+  version "0.0.25"
   license "Apache 2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/steviebps/realm/releases/download/v0.0.24/realm_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "20bd447a441d55fe024afb34487264634610339cde5bacec4e9d06b1a6cc05b2"
+    if Hardware::CPU.intel?
+      url "https://github.com/steviebps/realm/releases/download/v0.0.25/realm_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "83d91dcd3475fdc278ed9b60c479fb3c77f4d31f078f33b1ff9e11f80ec6b819"
 
       def install
         bin.install "realm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/steviebps/realm/releases/download/v0.0.24/realm_Darwin_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "d91876de300955e70c28b77c2179d0b8fc461cc7661cf3d2647d7c41510bd153"
+    if Hardware::CPU.arm?
+      url "https://github.com/steviebps/realm/releases/download/v0.0.25/realm_Darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "ca868f5a5e37d6d2fb45bc227be507e6ce89f0332650f499db1ae5a1596a5609"
 
       def install
         bin.install "realm"
@@ -28,18 +28,16 @@ class Realm < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/steviebps/realm/releases/download/v0.0.24/realm_Linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b6b984a0e2e8521fbf80b6b34f9b5743553c23edb85005d22e9d72d6ffc5c5e4"
-
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
+      url "https://github.com/steviebps/realm/releases/download/v0.0.25/realm_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
+      sha256 "2f53cfbeef14e3ffe58d7ca77a6c208716af4fdf40e49abb6b47f6e06304e90f"
       def install
         bin.install "realm"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/steviebps/realm/releases/download/v0.0.24/realm_Linux_x86_64.tar.gz", using: CurlDownloadStrategy
-      sha256 "090ab126da9459b1a290b1ab9454a538daf40b1ae5f8ffd09555fa966a97308f"
-
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/steviebps/realm/releases/download/v0.0.25/realm_Linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "258b8bcd86e79284f602d2bcf393f8b3233441a9b7e263be038dda236f26b1be"
       def install
         bin.install "realm"
       end
