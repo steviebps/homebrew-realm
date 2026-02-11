@@ -3,7 +3,7 @@ cask "realm" do
   name "realm"
   desc "Inheritable and overridable configuration management"
   homepage "https://github.com/steviebps/realm"
-  version "0.0.26"
+  version "0.1.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "realm" do
     on_intel do
       url "https://github.com/steviebps/realm/releases/download/v#{version}/realm_Darwin_x86_64.tar.gz",
         using: :homebrew_curl
-      sha256 "e1bc681d22b5e78df41ac2ea375d0172832251ffeb6a11351859199afdf55e4e"
+      sha256 "91ad52f7bf33d363f42459b5f7b2327916d72ce046d791797106a604a57fd1ff"
     end
     on_arm do
       url "https://github.com/steviebps/realm/releases/download/v#{version}/realm_Darwin_arm64.tar.gz",
         using: :homebrew_curl
-      sha256 "1291d22fcee7b781479cadaa75d4d210982daed89d8d3d36940b938c74f6a0e9"
+      sha256 "e60cc4efc17e714ba1cb01d3d870d2947f2fd69dd87b4ef8613efff2b44f7e29"
     end
   end
 
@@ -28,12 +28,12 @@ cask "realm" do
     on_intel do
       url "https://github.com/steviebps/realm/releases/download/v#{version}/realm_Linux_x86_64.tar.gz",
         using: :homebrew_curl
-      sha256 "78d17a2c61380a68b92b0af83d9eab1a886d88d898e3a424609232456b02ed61"
+      sha256 "7d3aeeb08405761d96eb56ae666406f8b0a761f83270609ced5ebbbfdaf3fe16"
     end
     on_arm do
       url "https://github.com/steviebps/realm/releases/download/v#{version}/realm_Linux_arm64.tar.gz",
         using: :homebrew_curl
-      sha256 "69b905e046fdb4c4f520b794a0cb371d06518da3cbbcf260557320acec8d25b6"
+      sha256 "019b76f064d6da1e55746a1db53c5c84a1971d867823c362a86fa96535dca70a"
     end
   end
 
